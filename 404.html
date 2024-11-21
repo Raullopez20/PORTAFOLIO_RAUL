@@ -1,62 +1,134 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
-  <title>Page Not Found</title>
+  <title>Error 404 - Perdido en el espacio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    /* General Reset */
     * {
-      line-height: 1.2;
       margin: 0;
-    }
-
-    html {
-      color: #888;
-      display: table;
-      font-family: sans-serif;
-      height: 100%;
-      text-align: center;
-      width: 100%;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      display: table-cell;
-      vertical-align: middle;
-      margin: 2em auto;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      background: linear-gradient(135deg, #0A192F, #4B0082);
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      overflow: hidden;
     }
 
     h1 {
-      color: #555;
-      font-size: 2em;
-      font-weight: 400;
+      font-size: 5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     }
 
     p {
-      margin: 0 auto;
-      width: 280px;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: #dcdcdc;
     }
 
-    @media only screen and (max-width: 280px) {
+    img {
+      width: 350px;
+      height: auto;
+      margin-bottom: 2rem;
+      border-radius: 50%;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+      animation: float 4s ease-in-out infinite;
+    }
 
-      body,
-      p {
-        width: 95%;
+    a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: #ffffff;
+      background: #4B0082;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    a:hover {
+      background: #6a0dad;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
       }
-
-      h1 {
-        font-size: 1.5em;
-        margin: 0 0 0.3em;
+      50% {
+        transform: translateY(-20px);
       }
+      100% {
+        transform: translateY(0);
+      }
+    }
 
+    /* Stars Background */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: transparent;
+    }
+
+    .stars span {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 50%;
+      animation: sparkle 5s linear infinite;
+    }
+
+    .stars span:nth-child(odd) {
+      animation-delay: 2.5s;
+    }
+
+    @keyframes sparkle {
+      0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   </style>
 </head>
 
 <body>
-  <h1>Page Not Found</h1>
-  <p>Sorry, but the page you were trying to view does not exist.</p>
+<div class="stars">
+  <!-- Generate 100 stars -->
+  <script>
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('span');
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.left = Math.random() * 100 + 'vw';
+      document.querySelector('.stars').appendChild(star);
+    }
+  </script>
+</div>
+
+<h1>Error 404</h1>
+<p>¡Oops! Parece que estás perdido en el espacio.</p>
+<img src="images/homer_404.png" alt="Perdido en el espacio">
+<a href="index.html">Regresar al inicio</a>
 </body>
 
 </html>
-<!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->
