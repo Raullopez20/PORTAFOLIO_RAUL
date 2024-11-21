@@ -14,15 +14,14 @@
 <header>
   <nav>
     <h1>Raúl López</h1>
+    <button id="hamburgerMenu" class="hamburger-menu">☰</button>
     <ul class="nav-links">
       <li><a href="#sobre-mi">Sobre Mi</a></li>
       <li><a href="#habilidades">Habilidades</a></li>
-      <li><a href="#experiencia">Experiecia</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#contacto">Contacto</a></li>
-      <li></li>
     </ul>
-    <!-- Botón de cambio de tema -->
     <button id="themeToggle" class="theme-toggle">🌙</button>
   </nav>
 </header>
@@ -151,13 +150,13 @@
     <div class="project">
       <h3>Manage My Inventory App</h3>
       <div class="carousel">
-        <img src="images/example8.jpg" alt="Portfolio Image 8">
-        <img src="images/example9.jpg" alt="Portfolio Image 9">
-        <img src="images/example10.jpg" alt="Portfolio Image 10">
-        <img src="images/example11.jpg" alt="Portfolio Image 11">
-        <img src="images/example12.jpg" alt="Portfolio Image 12">
-        <img src="images/example13.jpg" alt="Portfolio Image 13">
-        <img src="images/example14.jpg" alt="Portfolio Image 8">
+        <!--        <img src="images/example8.jpg" alt="Portfolio Image 8">-->
+        <!--        <img src="images/example9.jpg" alt="Portfolio Image 9">-->
+        <!--        <img src="images/example10.jpg" alt="Portfolio Image 10">-->
+        <!--        <img src="images/example11.jpg" alt="Portfolio Image 11">-->
+        <!--        <img src="images/example12.jpg" alt="Portfolio Image 12">-->
+        <!--        <img src="images/example13.jpg" alt="Portfolio Image 13">-->
+        <!--        <img src="images/example14.jpg" alt="Portfolio Image 8">-->
       </div>
       <p><strong>Manage My Inventory App</strong></p>
       <p>App para gestionar inventarios, controlar stock, proveedores, <br>
@@ -169,12 +168,12 @@
     <div class="project">
       <h3>Portfolio Personal</h3>
       <div class="carousel">
-        <img src="images/example15.jpg" alt="Portfolio Image 15">
-        <img src="images/example16.jpg" alt="Portfolio Image 16">
-        <img src="images/example17.jpg" alt="Portfolio Image 17">
-        <img src="images/example18.jpg" alt="Portfolio Image 18">
-        <img src="images/example19.jpg" alt="Portfolio Image 19">
-        <img src="images/example20.jpg" alt="Portfolio Image 20">
+        <!--        <img src="images/example15.jpg" alt="Portfolio Image 15">-->
+        <!--        <img src="images/example16.jpg" alt="Portfolio Image 16">-->
+        <!--        <img src="images/example17.jpg" alt="Portfolio Image 17">-->
+        <!--        <img src="images/example18.jpg" alt="Portfolio Image 18">-->
+        <!--        <img src="images/example19.jpg" alt="Portfolio Image 19">-->
+        <!--        <img src="images/example20.jpg" alt="Portfolio Image 20">-->
       </div>
       <p>Diseñado para resaltar habilidades y proyectos.</p>
       <p>Este es un breve texto sobre el proyecto.</p>
@@ -186,7 +185,7 @@
 <!-- Contacto -->
 <section id="contacto" class="section">
   <h2 class="contact-form-title">Contáctame</h2>
-  <form class="contact-form">
+  <form id="contactForm" class="contact-form">
     <label for="name">Nombre</label>
     <input id="name" type="text" placeholder="Tu nombre" required>
 
@@ -198,6 +197,7 @@
 
     <button type="submit">Enviar</button>
   </form>
+  <div id="formMessage"></div>
 </section>
 
 <!-- Footer -->
@@ -211,6 +211,5 @@
 
 <!-- Script -->
 <script src="js/app.js"></script>
-
 </body>
 </html>
