@@ -461,30 +461,6 @@ header nav {
   font-size: 1rem;
 }
 
-/* Carousel Styles */
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-}
-
-.carousel img {
-  width: 100%;
-  height: 85%;
-  object-fit: revert;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  opacity: 0;
-  transition: opacity 1s ease, left 1s ease;
-}
-
-.carousel img.active {
-  left: 0;
-  opacity: 1;
-}
-
 /* Estilos para el botón de descarga */
 .btn-download {
   display: inline-block;
@@ -726,6 +702,9 @@ footer p {
     max-width: 700px;
   }
 }
+
+
+
 
 /* Movil */
 
