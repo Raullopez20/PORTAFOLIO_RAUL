@@ -14,12 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
     feedback.textContent = "Enviando mensaje...";
 
     try {
-      const response = await fetch("/.netlify/functions/send-email", 10,{
+      const response = await fetch("/.netlify/functions/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: document.getElementById("name").value.trim(),
+          email: document.getElementById("email").value.trim(),
+          message: document.getElementById("message").value.trim(),
+        }),
       });
 
       if (response.ok) {
@@ -115,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetId = link.getAttribute('href').substring(1);
       const targetSection = document.getElementById(targetId);
       if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+        targetSection.scrollIntoView({behavior: 'smooth'});
       }
     });
   });
