@@ -19,7 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: "Nombre",
+          email: "correo@example.com",
+          message: "Este es un mensaje de prueba",
+        }),
       });
 
       if (response.ok) {

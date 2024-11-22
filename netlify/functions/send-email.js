@@ -1,3 +1,7 @@
+require('dotenv').config();
+console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
+const {createTransport} = require("nodemailer");
 exports.handler = async (event) => {
   try {
     // Verificar método HTTP
@@ -21,14 +25,17 @@ exports.handler = async (event) => {
       };
     }
 
-    // Configuración de nodemailer
-    const transporter = nodemailer.createTransport({
+    const transporter = createTransport({
       service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
+      tls: {
+        rejectUnauthorized: false,
+      },
     });
+
 
     // Opciones del correo
     const mailOptions = {
