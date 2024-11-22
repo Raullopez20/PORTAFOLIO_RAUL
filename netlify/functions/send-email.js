@@ -1,10 +1,7 @@
-require('dotenv').config();
-console.log("EMAIL_USER:", process.env.EMAIL_USER);
-console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
-const {createTransport} = require("nodemailer");
+const { createTransport } = require("nodemailer");
+
 exports.handler = async (event) => {
   try {
-    // Verificar método HTTP
     if (event.httpMethod !== "POST") {
       return {
         statusCode: 405,
@@ -12,10 +9,8 @@ exports.handler = async (event) => {
       };
     }
 
-    // Depurar datos recibidos
     console.log("Datos recibidos:", event.body);
 
-    // Parsear datos del cuerpo de la solicitud
     const { name, email, message } = JSON.parse(event.body);
 
     if (!name || !email || !message) {
@@ -32,12 +27,10 @@ exports.handler = async (event) => {
         pass: process.env.EMAIL_PASS,
       },
       tls: {
-        rejectUnauthorized: false,
+        rejectUnauthorized: false,  // Permite certificados no seguros
       },
     });
 
-
-    // Opciones del correo
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: "raullopez20r@gmail.com",
@@ -45,7 +38,8 @@ exports.handler = async (event) => {
       text: `Nombre: ${name}\nEmail: ${email}\nMensaje: ${message}`,
     };
 
-    // Enviar correo
+    console.log("Enviando correo...");
+
     await transporter.sendMail(mailOptions);
 
     return {
