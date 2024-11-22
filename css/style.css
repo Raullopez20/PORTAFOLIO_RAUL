@@ -185,7 +185,7 @@ i {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 1.5rem; /* Reduced gap */
   max-width: 600px;
   margin: 0 auto;
 }
@@ -204,6 +204,7 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: float 3s ease-in-out infinite; /* Added animation */
 }
 
 .skill img {
@@ -220,6 +221,29 @@ i {
   margin-top: 0.5rem;
   font-size: 1.1rem;
 }
+
+.skills-tools-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills-section {
+  flex: 1;
+}
+
+/* Professional animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 
 /* Formulario de contacto */
 .contact-form input,
@@ -566,6 +590,11 @@ header nav {
   border-radius: 2px;
 }
 
+.contact-form input,
+.contact-form textarea {
+  color: #000; /* Cambia el color del texto a negro */
+}
+
 /* Pie de página */
 footer {
   text-align: center;
@@ -702,7 +731,6 @@ footer p {
     max-width: 700px;
   }
 }
-
 
 
 

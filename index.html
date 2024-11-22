@@ -47,36 +47,71 @@
   </div>
 </section>
 
-<!-- Habilidades -->
-<section id="habilidades" class="section">
-  <h2>Habilidades</h2>
-  <div class="skills-container">
-    <div class="skills">
-      <button class="skill">
-        <img src="images/java.png" alt="Java">
-      </button>
-      <button class="skill">
-        <img src="images/html.png" alt="HTML">
-      </button>
-      <button class="skill">
-        <img src="images/css.png" alt="CSS">
-      </button>
-      <button class="skill">
-        <img src="images/js.png" alt="JavaScript">
-      </button>
-      <button class="skill">
-        <img src="images/angular.png" alt="Angular">
-      </button>
-      <button class="skill">
-        <img src="images/github.png" alt="GitHub">
-      </button>
-      <button class="skill">
-        <img src="images/git.png" alt="Git">
-      </button>
-      <button class="skill">
-        <img src="images/mysql.png" alt="MySQL">
-      </button>
-    </div>
+<!-- Habilidades y Herramientas -->
+<section id="skills-tools" class="section">
+  <div class="skills-tools-container">
+    <!-- Habilidades -->
+    <section id="habilidades" class="skills-section">
+      <h2>Habilidades</h2>
+      <div class="skills-container">
+        <div class="skills">
+          <button class="skill">
+            <img src="images/java.png" alt="Java">
+          </button>
+          <button class="skill">
+            <img src="images/html.png" alt="HTML">
+          </button>
+          <button class="skill">
+            <img src="images/css.png" alt="CSS">
+          </button>
+          <button class="skill">
+            <img src="images/js.png" alt="JavaScript">
+          </button>
+          <button class="skill">
+            <img src="images/angular.png" alt="Angular">
+          </button>
+          <button class="skill">
+            <img src="images/kotlin.png" alt="Kotlin">
+          </button>
+          <button class="skill">
+            <img src="images/mysql.png" alt="MySQL">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Herramientas -->
+    <section id="herramientas" class="skills-section">
+      <h2>Herramientas</h2>
+      <div class="skills-container">
+        <div class="skills">
+          <button class="skill">
+            <img src="images/vs.png" alt="VisualStudio">
+          </button>
+          <button class="skill">
+            <img src="images/webstrom.png" alt="WebStrom">
+          </button>
+          <button class="skill">
+            <img src="images/intelj.png" alt="Intel J">
+          </button>
+          <button class="skill">
+            <img src="images/postman.png" alt="Postman">
+          </button>
+          <button class="skill">
+            <img src="images/figma.png" alt="Figma">
+          </button>
+          <button class="skill">
+            <img src="images/androidStudio.png" alt="Android Studio">
+          </button>
+          <button class="skill">
+            <img src="images/github.png" alt="GitHub">
+          </button>
+          <button class="skill">
+            <img src="images/git.png" alt="Git">
+          </button>
+        </div>
+      </div>
+    </section>
   </div>
 </section>
 
@@ -101,7 +136,8 @@
       <ul>
         <li><strong>Educación Secundaria Obligatoria</strong> - Colegio Jesús-María San Agustín</li>
         <li><strong>Grado Medio SMR</strong> - IES Las Espeñetas (Sistemas Microinformáticos y Redes)</li>
-        <li><strong>Grado Superior DAM</strong> - IES Las Espeñetas (Desarrollo de Aplicaciones Multiplataforma)</li>
+        <li><strong>Grado Superior DAM</strong> - IES Las Espeñetas (Desarrollo de Aplicaciones Multiplataforma)
+        </li>
       </ul>
     </div>
 
@@ -130,21 +166,19 @@
       <div class="carousel">
 
 
-
       </div>
       <p><strong>Gestión de usuarios y seguimiento de rutinas</strong></p>
       <p>App para gimnasios que permite registrar usuarios, asignar roles <br>
         y monitorear rutinas, optimizando la organización y <br>
         el seguimiento de entrenamientos.</p>
       <a href="download/GYMBROS.zip" class="btn-download" download>Descargar</a>
-      <a href="" target="_blank"><i class="ri-github-fill"></i></a>
+      <a href="https://github.com/Raullopez20/GymBros_App" target="_blank"><i class="ri-github-fill"></i></a>
 
     </div>
 
     <div class="project">
       <h3>Manage My Inventory App</h3>
       <div class="carousel">
-
 
 
       </div>
@@ -159,23 +193,19 @@
   </div>
 </section>
 
-<!-- Contacto -->
-<section id="contacto" class="section">
-  <h2 class="contact-form-title">Contáctame</h2>
-  <form id="contactForm" class="contact-form">
-    <label for="name">Nombre</label>
-    <input id="name" type="text" placeholder="Tu nombre" required>
+<form id="contactForm" class="contact-form" method="POST" action="/.netlify/functions/send-email" name="contact">
+  <label for="name">Nombre</label>
+  <input id="name" name="name" type="text" placeholder="Tu nombre" required>
 
-    <label for="email">Email</label>
-    <input id="email" type="email" placeholder="Tu email" required>
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" placeholder="Tu email" required>
 
-    <label for="message">Mensaje</label>
-    <textarea id="message" placeholder="Tu mensaje" required></textarea>
+  <label for="message">Mensaje</label>
+  <textarea id="message" name="message" placeholder="Tu mensaje" required></textarea>
 
-    <button type="submit">Enviar</button>
-  </form>
-  <div id="formMessage"></div>
-</section>
+  <button type="submit">Enviar</button>
+</form>
+
 
 <!-- Footer -->
 <footer>

@@ -81,28 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Carousel functionality
-  const carousels = document.querySelectorAll('.carousel');
-  carousels.forEach(carousel => {
-    const images = carousel.querySelectorAll('img');
-    let currentIndex = 0;
-
-    const showNextImage = () => {
-      if (images[currentIndex]) {
-        images[currentIndex].classList.remove('active');
-      }
-      currentIndex = (currentIndex + 1) % images.length;
-      if (images[currentIndex]) {
-        images[currentIndex].classList.add('active');
-      }
-    };
-
-    if (images[currentIndex]) {
-      images[currentIndex].classList.add('active');
-    }
-    setInterval(showNextImage, 3000);
-  });
-
   // Modal functionality
   const modal = document.getElementById('projectModal');
   const modalImg = document.querySelector('.modal-image');
@@ -153,41 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
-
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      message: document.getElementById('message').value
-    };
-
-    fetch('/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.text();
-      })
-      .then(data => {
-        document.getElementById('formMessage').innerText = 'Mensaje enviado correctamente';
-        contactForm.reset();
-      })
-      .catch(error => {
-        document.getElementById('formMessage').innerText = 'Error al enviar el mensaje';
-        console.error('There was a problem with the fetch operation:', error);
-      });
-  });
-}
 
 // Menú Hamburguesa
 const hamburgerMenu = document.getElementById('hamburgerMenu');
