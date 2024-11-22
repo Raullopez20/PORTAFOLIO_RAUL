@@ -1,43 +1,52 @@
-const nodemailer = require("nodemailer");
-
 exports.handler = async (event) => {
-  // Permitir solo peticiones POST
-  if (event.httpMethod !== "POST") {
-    return {
-      statusCode: 405,
-      body: "Método no permitido",
-    };
-  }
-
-  // Extraer datos del formulario
-  const { name, email, message } = JSON.parse(event.body);
-
-  // Configurar el transporte de nodemailer
-  const transporter = nodemailer.createTransport({
-    service: "gmail", // Cambiar si usas otro proveedor
-    auth: {
-      user: process.env.EMAIL_USER, // Tu correo (configurado en Netlify)
-      pass: process.env.EMAIL_PASS, // Tu contraseña o token (configurado en Netlify)
-    },
-  });
-
-  // Opciones del correo
-  const mailOptions = {
-    from: process.env.EMAIL_USER, // Remitente
-    to: "raullopez20r@gmail.com", // Correo de destino
-    subject: "Nuevo mensaje desde tu portafolio",
-    text: `Nombre: ${name}\nEmail: ${email}\nMensaje: ${message}`,
-  };
-
   try {
-    // Enviar el correo
+    // Verificar método HTTP
+    if (event.httpMethod !== "POST") {
+      return {
+        statusCode: 405,
+        body: JSON.stringify({ error: "Método no permitido" }),
+      };
+    }
+
+    // Depurar datos recibidos
+    console.log("Datos recibidos:", event.body);
+
+    // Parsear datos del cuerpo de la solicitud
+    const { name, email, message } = JSON.parse(event.body);
+
+    if (!name || !email || !message) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Faltan datos del formulario" }),
+      };
+    }
+
+    // Configuración de nodemailer
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    // Opciones del correo
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: "raullopez20r@gmail.com",
+      subject: "Nuevo mensaje desde tu portafolio",
+      text: `Nombre: ${name}\nEmail: ${email}\nMensaje: ${message}`,
+    };
+
+    // Enviar correo
     await transporter.sendMail(mailOptions);
+
     return {
       statusCode: 200,
       body: JSON.stringify({ message: "Correo enviado correctamente" }),
     };
   } catch (error) {
-    // Manejo de errores
+    console.error("Error en la función send-email:", error);
     return {
       statusCode: 500,
       body: JSON.stringify({

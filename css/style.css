@@ -595,6 +595,20 @@ header nav {
   color: #000; /* Cambia el color del texto a negro */
 }
 
+#formFeedback {
+  margin-top: 1em;
+  font-size: 0.9em;
+}
+
+#formFeedback.success {
+  color: green;
+}
+
+#formFeedback.error {
+  color: red;
+}
+
+
 /* Pie de página */
 footer {
   text-align: center;

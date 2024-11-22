@@ -193,18 +193,24 @@
   </div>
 </section>
 
-<form id="contactForm" class="contact-form" method="POST" action="/.netlify/functions/send-email" name="contact">
-  <label for="name">Nombre</label>
-  <input id="name" name="name" type="text" placeholder="Tu nombre" required>
+<!-- Contacto -->
+<section id="contacto" class="section">
+  <h2>Contacto</h2>
+  <form id="contactForm" class="contact-form" method="POST" name="contact">
+    <label for="name">Nombre</label>
+    <input id="name" name="name" type="text" placeholder="Tu nombre" required>
 
-  <label for="email">Email</label>
-  <input id="email" name="email" type="email" placeholder="Tu email" required>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="Tu email" required>
 
-  <label for="message">Mensaje</label>
-  <textarea id="message" name="message" placeholder="Tu mensaje" required></textarea>
+    <label for="message">Mensaje</label>
+    <textarea id="message" name="message" placeholder="Tu mensaje" required></textarea>
 
-  <button type="submit">Enviar</button>
-</form>
+    <button type="submit">Enviar</button>
+  </form>
+  <div id="formFeedback" style="margin-top: 1em; color: #555;"></div>
+</section>
+
 
 
 <!-- Footer -->

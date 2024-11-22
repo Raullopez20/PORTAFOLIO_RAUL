@@ -1,3 +1,42 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const feedback = document.getElementById("formFeedback");
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formData = {
+      name: document.getElementById("name").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      message: document.getElementById("message").value.trim(),
+    };
+
+    feedback.textContent = "Enviando mensaje...";
+
+    try {
+      const response = await fetch("/.netlify/functions/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        feedback.textContent = "Mensaje enviado correctamente.";
+        form.reset(); // Limpia el formulario después del envío
+      } else {
+        const errorData = await response.json();
+        feedback.textContent = `Error: ${errorData.error || "No se pudo enviar el mensaje"}`;
+      }
+    } catch (error) {
+      feedback.textContent = "Error al enviar el mensaje. Intenta de nuevo.";
+    }
+  });
+});
+
+
 document.addEventListener('DOMContentLoaded', () => {
   // Theme toggle functionality
   const themeToggle = document.querySelector('.theme-toggle');
