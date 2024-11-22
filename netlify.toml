@@ -1,2 +1,6 @@
 [build]
-functions = "netlify/functions"
+  publish = "." # Publica desde la raíz del proyecto
+  command = "npm run build" # Cambia esto si usas otro comando de build
+
+[functions]
+  directory = "netlify/functions"

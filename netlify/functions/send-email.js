@@ -9,8 +9,6 @@ exports.handler = async (event) => {
       };
     }
 
-    console.log("Datos recibidos:", event.body);
-
     const { name, email, message } = JSON.parse(event.body);
 
     if (!name || !email || !message) {
@@ -27,7 +25,7 @@ exports.handler = async (event) => {
         pass: process.env.EMAIL_PASS,
       },
       tls: {
-        rejectUnauthorized: false,  // Permite certificados no seguros
+        rejectUnauthorized: false,
       },
     });
 
@@ -38,8 +36,6 @@ exports.handler = async (event) => {
       text: `Nombre: ${name}\nEmail: ${email}\nMensaje: ${message}`,
     };
 
-    console.log("Enviando correo...");
-
     await transporter.sendMail(mailOptions);
 
     return {
@@ -47,7 +43,6 @@ exports.handler = async (event) => {
       body: JSON.stringify({ message: "Correo enviado correctamente" }),
     };
   } catch (error) {
-    console.error("Error en la función send-email:", error);
     return {
       statusCode: 500,
       body: JSON.stringify({
