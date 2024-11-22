@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8453e63-6af5-427d-a185-784aa5f56cc9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netlify/functions/send-email.js" beforeDir="false" />
-    </list>
+    <list default="true" id="d8453e63-6af5-427d-a185-784aa5f56cc9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,11 +56,11 @@
       <recent name="C:\Users\raull\Desktop\2 DAM\1. Raul\PORTAFOLIO" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\raull\Desktop\2 DAM\1. Raul\PORTAFOLIO\netlify\functions" />
+      <recent name="C:\Users\raull\Desktop\2 DAM\1. Raul\PORTAFOLIO\.netlify\v1\functions" />
       <recent name="C:\Users\raull\Desktop\2 DAM\1. Raul\PORTAFOLIO\js\public" />
       <recent name="C:\Users\raull\Desktop\2 DAM\1. Raul\PORTAFOLIO\images\pr_Gym" />
       <recent name="C:\Users\raull\Desktop\2 DAM\1. Raul\PORTAFOLIO\download" />
-      <recent name="C:\Users\raull\Desktop\2 DAM\1. Raul\PORTAFOLIO\images" />
-      <recent name="C:\Users\raull\Desktop\2 DAM\1. Raul\PORTAFOLIO" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -94,7 +91,7 @@
       <workItem from="1732232479103" duration="3448000" />
       <workItem from="1732290210562" duration="779000" />
       <workItem from="1732291260278" duration="600000" />
-      <workItem from="1732291875089" duration="8571000" />
+      <workItem from="1732291875089" duration="8969000" />
     </task>
     <servers />
   </component>
