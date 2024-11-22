@@ -2,6 +2,8 @@ const { createTransport } = require("nodemailer");
 
 exports.handler = async (event) => {
   try {
+    console.log("Received event:", event);
+
     if (event.httpMethod !== "POST") {
       return {
         statusCode: 405,
@@ -10,6 +12,7 @@ exports.handler = async (event) => {
     }
 
     const { name, email, message } = JSON.parse(event.body);
+    console.log("Parsed body:", { name, email, message });
 
     if (!name || !email || !message) {
       return {
@@ -37,12 +40,14 @@ exports.handler = async (event) => {
     };
 
     await transporter.sendMail(mailOptions);
+    console.log("Email sent successfully");
 
     return {
       statusCode: 200,
       body: JSON.stringify({ message: "Correo enviado correctamente" }),
     };
   } catch (error) {
+    console.error("Error sending email:", error);
     return {
       statusCode: 500,
       body: JSON.stringify({

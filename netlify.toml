@@ -1,6 +1,11 @@
 [build]
-  publish = "." # Publica desde la raíz del proyecto
-  command = "npm run build" # Cambia esto si usas otro comando de build
+  publish = "dist" # Change this to your build output directory
+  command = "npm run build" # Change this if you use a different build command
 
 [functions]
   directory = "netlify/functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
