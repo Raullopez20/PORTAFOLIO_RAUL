@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     feedback.textContent = "Enviando mensaje...";
 
     try {
-      const response = await fetch("/.netlify/functions/v1/send-email", {
+      const response = await fetch(".netlify/v1/functions/send-email.js", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
