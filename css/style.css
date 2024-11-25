@@ -1080,14 +1080,14 @@ footer p {
   }
 }
 
-/* Contenedor principal de las secciones */
-.skills-tools-container {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Cambiar el orden en dispositivos móviles */
 @media (max-width: 480px) {
+  /* Contenedor principal de las secciones */
+  .skills-tools-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Cambiar el orden en dispositivos móviles */
   #herramientas {
     order: 2;
   }
@@ -1096,6 +1096,7 @@ footer p {
     order: 1;
   }
 }
+
 @media (max-width: 480px) {
   header h1 {
     display: none;

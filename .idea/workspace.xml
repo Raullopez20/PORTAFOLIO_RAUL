@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8453e63-6af5-427d-a185-784aa5f56cc9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/images/php.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netlify.toml" beforeDir="false" afterPath="$PROJECT_DIR$/netlify.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +96,10 @@
       <workItem from="1732291875089" duration="11483000" />
       <workItem from="1732373374190" duration="56000" />
       <workItem from="1732377003481" duration="25000" />
-      <workItem from="1732537685158" duration="1923000" />
+      <workItem from="1732537685158" duration="2629000" />
+      <workItem from="1732546692086" duration="8000" />
+      <workItem from="1732552434147" duration="7000" />
+      <workItem from="1732552959916" duration="878000" />
     </task>
     <servers />
   </component>
