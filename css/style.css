@@ -465,8 +465,8 @@ header nav {
   border-radius: 10px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: calc(30% - 8rem);
-  flex-basis: calc(45% - 2rem);
+  width: calc(25% - 4rem); /* Reduce el ancho del contenedor */
+  flex-basis: calc(40% - 2rem);
   text-align: center;
   overflow: revert;
 }
@@ -483,6 +483,54 @@ header nav {
 
 .project p {
   font-size: 1rem;
+}
+
+.image-container {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem; /* Agrega separación entre la imagen y el texto */
+  width: 400px; /* Ajusta el ancho del contenedor de la imagen */
+  height: 300px; /* Ajusta la altura del contenedor de la imagen */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.window-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #f1f1f1;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.window-button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.window-button.close {
+  background: #ff5f56;
+}
+
+.window-button.minimize {
+  background: #ffbd2e;
+}
+
+.window-button.maximize {
+  background: #27c93f;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen para que cubra el contenedor */
+  display: block;
 }
 
 /* Estilos para el botón de descarga */
@@ -1041,30 +1089,53 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem; /* Ajustar el espacio */
-    padding: 0; /* Eliminar padding */
-    margin: 0; /* Eliminar margin */
+    gap: 1rem; /* Ajusta el espacio entre los proyectos */
+    padding: 0; /* Elimina el padding */
+    margin: 0; /* Elimina el margin */
   }
 
   .project {
     width: 100%;
-    max-width: 100%; /* Hacer ancho completo */
-    padding: 0.5rem; /* Ajustar padding */
-    border-radius: 10px; /* Ajustar border-radius */
-  margin: 1rem 0; /* Ajustar el margen superior e inferior */
+    max-width: 100%; /* Ancho completo */
+    padding: 1rem; /* Ajusta el padding */
+    border-radius: 10px; /* Ajusta el border-radius */
+    margin: 1rem 0; /* Ajusta el margen superior e inferior */
   }
 
-  .project .carousel {
-    height: auto; /* Ajustar la altura */
-    padding: 0; /* Eliminar padding */
-    margin: 0; /* Eliminar margin */
+  .image-container {
+    width: 80%; /* Ancho reducido */
+    height: auto; /* Ajusta la altura */
+    max-width: 80%; /* Ancho máximo */
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .project .carousel img {
-    display: none; /* Ocultar imágenes del proyecto */
+  .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor */
+    display: block; /* Asegura que las imágenes se muestren */
   }
-}
-@media (max-width: 480px) {
+
+  .window-bar {
+    padding: 0.5rem;
+  }
+
+  .project h3 {
+    font-size: 1.2rem; /* Ajusta el tamaño de la fuente */
+    margin-bottom: 0.5rem; /* Ajusta el margen inferior */
+  }
+
+  .project p {
+    font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
+    margin-bottom: 1rem; /* Ajusta el margen inferior */
+  }
+
+  .btn-download {
+    padding: 0.5rem 1rem; /* Ajusta el padding */
+    font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
+  }
+
   /* Estilos de la sección hero */
   .hero {
     display: flex;
@@ -1078,9 +1149,7 @@ footer p {
     width: 90%;
     clip-path: none; /* Eliminar el clip-path */
   }
-}
 
-@media (max-width: 480px) {
   /* Contenedor principal de las secciones */
   .skills-tools-container {
     display: flex;
@@ -1095,11 +1164,73 @@ footer p {
   #habilidades {
     order: 1;
   }
-}
 
-@media (max-width: 480px) {
   header h1 {
     display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .gradient-text {
+    font-size: 1.80em; /* Ajusta el tamaño de la fuente */
+  }
+}
+
+.contact-info {
+  text-align: center;
+  padding: 2rem;
+  background: var(--primary-color);
+  color: var(--text-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--secondary-color);
+  color: var(--text-light);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.contact-link i {
+  margin-right: 0.5rem;
+}
+
+.contact-link:hover {
+  background: var(--primary-color);
+}
+
+@media (max-width: 480px) {
+  .contact-info {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .contact-methods {
+    gap: 0.5rem;
+  }
+
+  .contact-link {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
+
+
+
 
